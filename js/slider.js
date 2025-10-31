@@ -1,65 +1,100 @@
-document.addEventListener('DOMContentLoaded', function () {
+// Slider functionality for hero section
+document.addEventListener('DOMContentLoaded', function() {
   const slider = document.querySelector('.hero-slider');
-  if (!slider) return; // no slider present
-
-  const slidesEl = slider.querySelector('.slides'); // find the slides container element
-  const slides = slidesEl ? Array.from(slidesEl.children) : []; // array of slide elements (or empty)
-  const dotsContainer = slider.querySelector('.slider-dots'); // container for pagination dots
-  if (!slidesEl || slides.length === 0) return; // stop if no slides found
-
-  let current = 0; // index of the current slide
-  const total = slides.length; // total number of slides
-  const interval = 4000; // autoplay delay in milliseconds
-  let timer = null; // reference to autoplay timer (will store ID)
-
-  // build dots
-  dotsContainer.innerHTML = '';
-  for (let i = 0; i < total; i++) {
-    const btn = document.createElement('button'); // create a dot button
-    btn.type = 'button'; // make it a non-submit button
-    btn.setAttribute('aria-label', 'Go to slide ' + (i + 1)); // accessible label with slide number
-    btn.dataset.index = i; // store slide index for reference
-    btn.addEventListener('click', () => { goTo(i); resetTimer(); }); // go to slide and restart autoplay on click
-    dotsContainer.appendChild(btn); // append the dot to the dots container
+  const slides = document.querySelector('.slides');
+  const dotsContainer = document.querySelector('.slider-dots');
+  
+  if (!slider || !slides) return;
+  
+  const slideCount = slides.children.length;
+  let currentSlide = 0;
+  let autoplayInterval;
+  
+  // Create dots
+  for (let i = 0; i < slideCount; i++) {
+    const dot = document.createElement('button');
+    dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => goToSlide(i));
+    dotsContainer.appendChild(dot);
   }
-
-  function updateDots() {
-    Array.from(dotsContainer.children).forEach((b, i) => b.classList.toggle('active', i === current));
+  
+  function updateSlider() {
+    slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+    
+    // Update active dot
+    const dots = dotsContainer.querySelectorAll('button');
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentSlide);
+    });
   }
-
-  function goTo(index) {
-    current = (index + total) % total;
-    slidesEl.style.transform = `translateX(-${current * 100}%)`;
-    updateDots();
+  
+  function goToSlide(index) {
+    currentSlide = index;
+    updateSlider();
+    resetAutoplay();
   }
-
-  function next() { goTo(current + 1); }
-
-  function startTimer() {
-    stopTimer();
-    timer = setInterval(next, interval);
+  
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slideCount;
+    updateSlider();
   }
-  function stopTimer() {
-    if (timer) { clearInterval(timer); timer = null; }
+  
+  function resetAutoplay() {
+    clearInterval(autoplayInterval);
+    autoplayInterval = setInterval(nextSlide, 5000);
   }
-  function resetTimer() { stopTimer(); startTimer(); }
-
-  // pause on hover/focus
-  slider.addEventListener('mouseenter', stopTimer);
-  slider.addEventListener('mouseleave', startTimer);
-  slider.addEventListener('focusin', stopTimer);
-  slider.addEventListener('focusout', startTimer);
-
-  // keyboard navigation
-  slider.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') { goTo(current - 1); resetTimer(); }
-    if (e.key === 'ArrowRight') { goTo(current + 1); resetTimer(); }
+  
+  // Start autoplay
+  resetAutoplay();
+  
+  // Pause on hover
+  slider.addEventListener('mouseenter', () => {
+    clearInterval(autoplayInterval);
   });
-
-  // init
-  goTo(0);
-  startTimer();
-
-  // ensure layout recalculation on resize
-  window.addEventListener('resize', () => { goTo(current); });
+  
+  slider.addEventListener('mouseleave', () => {
+    resetAutoplay();
+  });
+  
+  // Touch swipe support
+  let touchStartX = 0;
+  let touchEndX = 0;
+  
+  slider.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  });
+  
+  slider.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  });
+  
+  function handleSwipe() {
+    const swipeThreshold = 50;
+    const diff = touchStartX - touchEndX;
+    
+    if (Math.abs(diff) > swipeThreshold) {
+      if (diff > 0) {
+        // Swipe left - next slide
+        nextSlide();
+      } else {
+        // Swipe right - previous slide
+        currentSlide = (currentSlide - 1 + slideCount) % slideCount;
+        updateSlider();
+      }
+      resetAutoplay();
+    }
+  }
+  
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+      currentSlide = (currentSlide - 1 + slideCount) % slideCount;
+      updateSlider();
+      resetAutoplay();
+    } else if (e.key === 'ArrowRight') {
+      nextSlide();
+    }
+  });
 });

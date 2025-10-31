@@ -1,201 +1,192 @@
-<!doctype html> <!-- HTML5 document type declaration -->
-<html lang="en"> <!-- Root HTML element -->
-
-<head> <!-- Head section with metadata and external resources -->
-  <meta charset="utf-8" /> <!-- Set character encoding to UTF-8 -->
-  <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Mobile-first scaling and layout -->
-  <title>YL BARBER LOUNGE — Barbershop Services</title> <!-- Page title shown in browser tab -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YL BARBER LOUNGE — Barbershop Services</title>
   <meta name="description" content="Simple, affordable barbershop. Quality haircuts, clean shaves, and beard trims." />
-  <!-- SEO description of the page -->
-  <meta name="author" content="YL BARBER LOUNGE" /> <!-- Author meta tag -->
-  <meta property="og:title" content="YL BARBER LOUNGE — Barbershop" /> <!-- Open Graph title used for social sharing -->
+  <meta name="author" content="YL BARBER LOUNGE" />
+  <meta property="og:title" content="YL BARBER LOUNGE — Barbershop" />
   <meta property="og:description" content="Simple, affordable barbershop services since 2023." />
-  <!-- Open Graph description for link previews -->
-  <meta property="og:type" content="website" /> <!-- Declares the Open Graph object type -->
-  <meta name="twitter:card" content="summary_large_image" /> <!-- Twitter card type for large preview image -->
-  <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Preconnect to Google Fonts to reduce latency -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Preconnect to fonts CDN with CORS -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap"
-    rel="stylesheet"> <!-- Load Playfair Display (serif) and Inter (sans-serif) from Google Fonts -->
-  <link rel="stylesheet" href="css/main.css" /> <!-- Link the main stylesheet for layout and design -->
-</head> <!-- End of head -->
-
-<body> <!-- Start of page body content -->
-  <!-- Light strip header so the dark logo is clearly visible -->
-  <header class="topbar"> <!-- Top navigation bar area -->
-    <div class="wrap"> <!-- Constrains header content and centers it -->
-      <div class="logo"> <!-- Logo block containing image and brand text -->
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <div class="logo">
         <img src="images/logo.png" alt="YL BARBER LOUNGE logo" width="160" height="48">
-        <!-- Logo image with alt text and fixed size -->
-        <div class="brand">YL BARBER LOUNGE</div> <!-- Brand name displayed next to the logo -->
-      </div> <!-- End logo block -->
-      <a class="book-btn" href="https://book.squareup.com/appointments/j1sffecwm1zeft/location/L4BP158DQWSWE/services"
-        target="_blank" rel="noopener noreferrer">Book now</a> <!-- Primary call-to-action link to the booking page -->
-    </div> <!-- End header wrapper -->
-  </header> <!-- End topbar -->
+        <div class="brand">YL BARBER LOUNGE</div>
+      </div>
+      <a class="book-btn" href="https://book.squareup.com/appointments/j1sffecwm1zeft/location/L4BP158DQWSWE/services" target="_blank" rel="noopener noreferrer">Book now</a>
+    </div>
+  </header>
+  <div class="hero-slider parallax" id="home">
+    <div class="slides">
+      <div class="slide" style="background-image: url('images/slide1.png');"></div>
+      <div class="slide" style="background-image: url('images/slide2.png');"></div>
+      <div class="slide" style="background-image: url('images/slide3.png');"></div>
+      <div class="slide" style="background-image: url('images/slide4.png');"></div>
+      <div class="slide" style="background-image: url('images/slide5.png');"></div>
+      <div class="slide" style="background-image: url('images/slide6.png');"></div>
+      <div class="slide" style="background-image: url('images/slide7.png');"></div>
+      <div class="slide" style="background-image: url('images/slide8.png');"></div>
+      <div class="slide" style="background-image: url('images/slide9.png');"></div>
+      <div class="slide" style="background-image: url('images/slide10.png');"></div>
+      <div class="slide" style="background-image: url('images/slide11.png');"></div>
+    </div>
+    <div class="slider-dots"></div>
+    <div class="hero-content">
+      <h1 class="heading">Stop by for a fresh fade and enjoy the vibes of a cozy Barber Lounge.</h1>
+      <p class="sub">Walk-ins and Appointments (preferred) available!</p>
+      <div class="offer">
+        <div class="offer-title">LIMITED OFFER:</div>
+        <div class="offer-subtitle">LOYALTY CARDS</div>
+        <ul class="perk-list">
+          <li>✅ 5 visits = $5 off</li>
+          <li>✅ 10 visits = FREE $10</li>
+        </ul>
+        <div class="note">*Ask for your punch card & start saving!*</div>
+      </div>
+    </div>
+  </div>
 
-  <main> <!-- Main content container -->
-    <section class="hero parallax" id="home"> <!-- Hero section at the top of the page (parallax enabled) -->
-      <div class="inner"> <!-- Inner wrapper used to position hero text -->
-        <div> <!-- Text block inside hero -->
-          <h1 class="heading">Stop by for a fresh fade and enjoy the vibes of a cozy Barber Lounge.</h1>
-          <p class="sub">Walk-ins and Appointments (preferred) available!</p>
-          <div class="offer">
-            <div class="offer-title">LIMITED OFFER:</div>
-            <div class="offer-subtitle">LOYALTY CARDS</div>
-            <ul class="perk-list">
-              <li>✅ 5 visits = $5 off</li>
-              <li>✅ 10 visits = FREE $10</li>
-            </ul>
-            <div class="note">*Ask for your punch card & start saving!*</div>
-          </div>
-        </div> <!-- End hero text block -->
-      </div> <!-- End inner wrapper -->
-    </section> <!-- End hero section -->
-
-    <section id="location"> <!-- Location/map section inserted between Hero and Services -->
+  <main>
+    <section id="location">
       <div class="container">
         <div class="section-head">
           <h2>Location</h2>
           <p class="section-desc">YL BARBER LOUNGE • 269 North East Rd Hampstead Gardens SA 5086</p>
         </div>
         <div class="map-embed">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3273.2778574562926!2d138.6323399!3d-34.8743684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ab0c91d543a2387%3A0xb7fbd7ee89b2d6fa!2sYL%20BARBER%20LOUNGE!5e0!3m2!1sen!2sau!4v1760875959940!5m2!1sen!2sau"
-            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3273.2778574562926!2d138.6323399!3d-34.8743684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ab0c91d543a2387%3A0xb7fbd7ee89b2d6fa!2sYL%20BARBER%20LOUNGE!5e0!3m2!1sen!2sau!4v1760875959940!5m2!1sen!2sau" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </section>
 
-    <section id="services"> <!-- Services listing section -->
-      <div class="container"> <!-- Centered content wrapper for services -->
-        <div class="section-head"> <!-- Section header with title and description -->
-          <h2>Services</h2> <!-- Section title -->
+    <section class="parallax-section" style="background-image: url('images/slide3.png');">
+      <div class="parallax-overlay">
+        <div class="container">
+          <div class="parallax-content">
+            <h2>Traditional Craft, Modern Style</h2>
+            <p>Experience the perfect blend of classic barbering techniques and contemporary style at YL BARBER LOUNGE.</p>
+            <a href="https://book.squareup.com/appointments/j1sffecwm1zeft/location/L4BP158DQWSWE/services" class="book-btn" target="_blank" rel="noopener noreferrer">Book Your Appointment</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <h2>Services</h2>
           <p class="section-desc">Everything you need to look sharp — priced for everyday visits.</p>
-          <!-- Short section description -->
-        </div> <!-- End section header -->
-        <div class="cards"> <!-- Grid of service cards -->
-          <a class="card"
-            href="https://book.squareup.com/appointments/j1sffecwm1zeft/location/L4BP158DQWSWE/services/RFBLKREIHPUH5OVQ6AXM6KND"
-            target="_blank" rel="noopener noreferrer">
+        </div>
+        <div class="cards">
+          <a class="card" href="https://book.squareup.com/appointments/j1sffecwm1zeft/location/L4BP158DQWSWE/services/RFBLKREIHPUH5OVQ6AXM6KND" target="_blank" rel="noopener noreferrer">
             <h3>Haircut</h3>
             <p>$30.00 / 15 mins</p>
           </a>
-          <a class="card"
-            href="https://book.squareup.com/appointments/j1sffecwm1zeft/location/L4BP158DQWSWE/services/RIOKII2S53JMD3DGTD2KZSBS"
-            target="_blank" rel="noopener noreferrer">
+          <a class="card" href="https://book.squareup.com/appointments/j1sffecwm1zeft/location/L4BP158DQWSWE/services/RIOKII2S53JMD3DGTD2KZSBS" target="_blank" rel="noopener noreferrer">
             <h3>Zero Fade</h3>
             <p>$35.00 / 25 mins</p>
           </a>
-          <a class="card"
-            href="https://book.squareup.com/appointments/j1sffecwm1zeft/location/L4BP158DQWSWE/services/JSQM65DSXNPUXW7C3MD42CPF"
-            target="_blank" rel="noopener noreferrer">
+          <a class="card" href="https://book.squareup.com/appointments/j1sffecwm1zeft/location/L4BP158DQWSWE/services/JSQM65DSXNPUXW7C3MD42CPF" target="_blank" rel="noopener noreferrer">
             <h3>Buzz cut</h3>
             <p>$25.00 / 15 mins</p>
           </a>
-          <a class="card"
-            href="https://book.squareup.com/appointments/j1sffecwm1zeft/location/L4BP158DQWSWE/services/R67PK3JIBOV5ZUB45PEMYTFT"
-            target="_blank" rel="noopener noreferrer">
+          <a class="card" href="https://book.squareup.com/appointments/j1sffecwm1zeft/location/L4BP158DQWSWE/services/R67PK3JIBOV5ZUB45PEMYTFT" target="_blank" rel="noopener noreferrer">
             <h3>Skinfade</h3>
             <p>$40.00 / 25 mins</p>
           </a>
-          <a class="card"
-            href="https://book.squareup.com/appointments/j1sffecwm1zeft/location/L4BP158DQWSWE/services/QA72KUMXDQ7BSHF3PXZSL22Q"
-            target="_blank" rel="noopener noreferrer">
+          <a class="card" href="https://book.squareup.com/appointments/j1sffecwm1zeft/location/L4BP158DQWSWE/services/QA72KUMXDQ7BSHF3PXZSL22Q" target="_blank" rel="noopener noreferrer">
             <h3>Skinfade &amp; beard</h3>
             <p>$65.00 / 40 mins</p>
           </a>
-          <a class="card"
-            href="https://book.squareup.com/appointments/j1sffecwm1zeft/location/L4BP158DQWSWE/services/HZCNESEWH7SAPZMAACECXA47"
-            target="_blank" rel="noopener noreferrer">
+          <a class="card" href="https://book.squareup.com/appointments/j1sffecwm1zeft/location/L4BP158DQWSWE/services/HZCNESEWH7SAPZMAACECXA47" target="_blank" rel="noopener noreferrer">
             <h3>Hair &amp; beard</h3>
             <p>$55.00 / 30 mins</p>
           </a>
-          <a class="card"
-            href="https://book.squareup.com/appointments/j1sffecwm1zeft/location/L4BP158DQWSWE/services/IPTGECPI3QOXCP52IOS5YC6W"
-            target="_blank" rel="noopener noreferrer">
+          <a class="card" href="https://book.squareup.com/appointments/j1sffecwm1zeft/location/L4BP158DQWSWE/services/IPTGECPI3QOXCP52IOS5YC6W" target="_blank" rel="noopener noreferrer">
             <h3>Beard</h3>
             <p>$25.00 / 15 mins</p>
           </a>
-          <a class="card"
-            href="https://book.squareup.com/appointments/j1sffecwm1zeft/location/L4BP158DQWSWE/services/PAJEB6LRRD2YI6YU3JTJ6LR6"
-            target="_blank" rel="noopener noreferrer">
+          <a class="card" href="https://book.squareup.com/appointments/j1sffecwm1zeft/location/L4BP158DQWSWE/services/PAJEB6LRRD2YI6YU3JTJ6LR6" target="_blank" rel="noopener noreferrer">
             <h3>Taper</h3>
             <p>$40.00 / 25 mins</p>
           </a>
-          <a class="card"
-            href="https://book.squareup.com/appointments/j1sffecwm1zeft/location/L4BP158DQWSWE/services/T34QOLXXGMIOO25JXWGUD5OT"
-            target="_blank" rel="noopener noreferrer">
+          <a class="card" href="https://book.squareup.com/appointments/j1sffecwm1zeft/location/L4BP158DQWSWE/services/T34QOLXXGMIOO25JXWGUD5OT" target="_blank" rel="noopener noreferrer">
             <h3>Hot shave</h3>
             <p>$30.00 / 20 mins</p>
           </a>
-          <a class="card"
-            href="https://book.squareup.com/appointments/j1sffecwm1zeft/location/L4BP158DQWSWE/services/L7DT36S7LM3NB2QFWLHICUJP"
-            target="_blank" rel="noopener noreferrer">
+          <a class="card" href="https://book.squareup.com/appointments/j1sffecwm1zeft/location/L4BP158DQWSWE/services/L7DT36S7LM3NB2QFWLHICUJP" target="_blank" rel="noopener noreferrer">
             <h3>Kids +10 y.o.</h3>
             <p>$30.00 / 15 mins</p>
           </a>
-          <a class="card"
-            href="https://book.squareup.com/appointments/j1sffecwm1zeft/location/L4BP158DQWSWE/services/OP66OFRF653FU2NUJRQ6IWEB"
-            target="_blank" rel="noopener noreferrer">
+          <a class="card" href="https://book.squareup.com/appointments/j1sffecwm1zeft/location/L4BP158DQWSWE/services/OP66OFRF653FU2NUJRQ6IWEB" target="_blank" rel="noopener noreferrer">
             <h3>Kids -10 y.o.</h3>
             <p>$27.00 / 15 mins</p>
           </a>
-          <a class="card"
-            href="https://book.squareup.com/appointments/j1sffecwm1zeft/location/L4BP158DQWSWE/services/GXRUF54UF6SVKGMPPMZWDIE5"
-            target="_blank" rel="noopener noreferrer">
+          <a class="card" href="https://book.squareup.com/appointments/j1sffecwm1zeft/location/L4BP158DQWSWE/services/GXRUF54UF6SVKGMPPMZWDIE5" target="_blank" rel="noopener noreferrer">
             <h3>Pensioner</h3>
             <p>$25.00 / 20 mins</p>
           </a>
-        </div> <!-- End cards grid -->
-      </div> <!-- End services container -->
-    </section> <!-- End services section -->
+        </div>
+      </div>
+    </section>
 
-    <section id="contact"> <!-- Contact / visit section -->
-      <div class="container"> <!-- Centered wrapper for contact details -->
-        <div class="section-head"> <!-- Section header for contact -->
-          <h2>Visit us</h2> <!-- Section title -->
-          <p class="section-desc">Walk in or book online. We’re ready when you are.</p> <!-- Section description -->
-        </div> <!-- End section head -->
-        <div class="info-grid"> <!-- Grid layout for hours and contact info -->
-          <div class="box"> <!-- Box containing opening hours -->
-            <h3>Opening hours</h3> <!-- Subheading -->
-            <div class="row"><span>Monday</span><span>12:00 pm - 3:00 pm</span></div> <!-- Monday hours -->
-            <div class="row"><span>Tuesday</span><span>9:00 am - 6:00 pm</span></div> <!-- Tuesday hours -->
-            <div class="row"><span>Wednesday</span><span>9:00 am - 6:00 pm</span></div> <!-- Wednesday hours -->
-            <div class="row"><span>Thursday</span><span>9:00 am - 9:00 pm</span></div> <!-- Thursday hours -->
-            <div class="row"><span>Friday</span><span>9:00 am - 7:00 pm</span></div> <!-- Friday hours -->
-            <div class="row"><span>Saturday</span><span>9:00 am - 6:00 pm</span></div> <!-- Saturday hours -->
-            <div class="row"><span>Sunday</span><span>10:00 am - 4:00 pm</span></div> <!-- Sunday hours -->
-          </div> <!-- End opening hours box -->
-          <div class="box"> <!-- Box containing contact information -->
-            <h3>Contact</h3> <!-- Subheading -->
+    <section class="parallax-section" style="background-image: url('images/slide7.png');">
+      <div class="parallax-overlay">
+        <div class="container">
+          <div class="parallax-content">
+            <h2>Your Style, Our Expertise</h2>
+            <p>From classic cuts to modern fades, our skilled barbers bring your vision to life with precision and care.</p>
+            <a href="https://book.squareup.com/appointments/j1sffecwm1zeft/location/L4BP158DQWSWE/services" class="book-btn" target="_blank" rel="noopener noreferrer">Explore Services</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <h2>Visit us</h2>
+          <p class="section-desc">Walk in or book online. We're ready when you are.</p>
+        </div>
+        <div class="info-grid">
+          <div class="box">
+            <h3>Opening hours</h3>
+            <div class="row"><span>Monday</span><span>12:00 pm - 3:00 pm</span></div>
+            <div class="row"><span>Tuesday</span><span>9:00 am - 6:00 pm</span></div>
+            <div class="row"><span>Wednesday</span><span>9:00 am - 6:00 pm</span></div>
+            <div class="row"><span>Thursday</span><span>9:00 am - 9:00 pm</span></div>
+            <div class="row"><span>Friday</span><span>9:00 am - 7:00 pm</span></div>
+            <div class="row"><span>Saturday</span><span>9:00 am - 6:00 pm</span></div>
+            <div class="row"><span>Sunday</span><span>10:00 am - 4:00 pm</span></div>
+          </div>
+          <div class="box">
+            <h3>Contact</h3>
             <div class="row"><span>Address</span><span>269 North East Rd Hampstead Gardens, SA 5086</span></div>
-            <!-- Address line -->
-            <div class="row"><span>Phone</span><span>0450 606 708</span></div> <!-- Phone number line -->
-            <div class="row"><span>Email</span><span><a
-                  href="mailto:waelzaytoon817@gmail.com">waelzaytoon817@gmail.com</a></span></div>
-            <!-- Email address line -->
-          </div> <!-- End contact info box -->
-        </div> <!-- End info grid -->
-      </div> <!-- End contact container -->
-    </section> <!-- End contact section -->
-  </main> <!-- End of main container -->
+            <div class="row"><span>Phone</span><span>0450 606 708</span></div>
+            <div class="row"><span>Email</span><span><a href="mailto:waelzaytoon817@gmail.com">waelzaytoon817@gmail.com</a></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-  <footer> <!-- Page footer -->
-    <div class="wrap"> <!-- Footer content wrapper -->
+  <footer>
+    <div class="wrap">
       <img src="images/logo.png" alt="YL BARBER LOUNGE logo small" width="120" height="36">
-      <!-- Footer logo uses logo.png as requested -->
-      <div class="note">&copy; Developed by <a href="https://github.com/dev-from-cbd"
-          title="Full stack developer Oleg Gribanov" target="_blank" rel="noopener noreferrer">Oleg</a> <a
-          href="https://www.linkedin.com/in/fatbadwombat/" title="Full stack developer Oleg Gribanov" target="_blank"
-          rel="noopener noreferrer">Gribanov</a> - 2025</div> <!-- Copyright notice -->
-    </div> <!-- End footer wrapper -->
-  </footer> <!-- End page footer -->
+      <div class="note">&copy; Developed by <a href="https://github.com/dev-from-cbd" title="Full stack developer Oleg Gribanov" target="_blank" rel="noopener noreferrer">Oleg</a> <a href="https://www.linkedin.com/in/fatbadwombat/" title="Full stack developer Oleg Gribanov" target="_blank" rel="noopener noreferrer">Gribanov</a> - 2025</div>
+    </div>
+  </footer>
 
-  <script src="js/parallax.js" defer></script>
-</body> <!-- End of body -->
-
-</html> <!-- End of HTML document -->
+  <script src="js/slider.js"></script>
+  <script src="js/parallax.js"></script>
+</body>
+</html>

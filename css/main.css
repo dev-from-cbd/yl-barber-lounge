@@ -536,50 +536,79 @@ footer{
   background:var(--light);
   color:var(--text);
   border-top:1px solid var(--border);
-  padding:24px 0;
+  padding:32px 0;
 }
 footer .wrap{
   padding:12px 16px;
-  flex-direction:column;
-  gap:16px;
-  text-align:center;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  position:relative;
+}
+.footer-logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-shrink:0;
 }
 footer img{
-  height:84px;
+  height:72px;
   width:auto;
-  margin:0 auto;
+}
+.footer-brand{
+  font-size:1.25rem;
+  letter-spacing:0.08em;
+  font-weight:600;
+  color:var(--text);
+}
+.footer-center{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 .footer-social{
   display:flex;
   gap:16px;
-  justify-content:center;
   align-items:center;
 }
 .footer-social .social-icon{
-  width:44px;
-  height:44px;
+  width:42px;
+  height:42px;
   color:var(--text);
-  opacity:0.8;
+  opacity:0.75;
+  transition:all 0.3s;
 }
 .footer-social .social-icon:hover{
   opacity:1;
   color:var(--accent);
+  transform:translateY(-2px);
 }
 .footer-social .social-icon svg{
-  width:26px;
-  height:26px;
+  width:24px;
+  height:24px;
+}
+.footer-right{
+  display:flex;
+  align-items:center;
+  flex-shrink:0;
 }
 footer .note{
   color:var(--text);
-  font-size:0.9rem;
-  opacity:0.8;
+  font-size:0.85rem;
+  opacity:0.7;
+  text-align:right;
+  line-height:1.5;
 }
 footer .note a{
   color:var(--accent);
   text-decoration:none;
   font-weight:600;
+  transition:opacity 0.3s;
 }
 footer .note a:hover{
+  opacity:1;
   text-decoration:underline;
 }
 
@@ -654,8 +683,33 @@ footer .note a:hover{
   section{
     padding:48px 16px;
   }
+  footer .wrap{
+    flex-direction:column;
+    gap:24px;
+    text-align:center;
+  }
+  .footer-logo{
+    flex-direction:column;
+    gap:8px;
+  }
   footer img{
     height:64px;
+    margin:0 auto;
+  }
+  .footer-brand{
+    font-size:1.1rem;
+  }
+  .footer-center{
+    order:2;
+  }
+  .footer-right{
+    order:3;
+    width:100%;
+    justify-content:center;
+  }
+  footer .note{
+    text-align:center;
+    font-size:0.8rem;
   }
   .map-embed iframe{
     height:300px;

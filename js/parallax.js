@@ -18,12 +18,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const offset = Math.round((rect.top) * speed);
     // place background center with offset (px)
     hero.style.backgroundPosition = `center ${offset}px`;
+    // allow another animation frame to be requested
     ticking = false;
   }
 
   function onScroll() {
+    // if no RAF is queued, request one to run `update`
     if (!ticking) {
       window.requestAnimationFrame(update);
+      // mark that an update is scheduled to prevent duplicate requests
       ticking = true;
     }
   }
@@ -37,8 +40,9 @@ document.addEventListener('DOMContentLoaded', function () {
       hero.style.backgroundPosition = ''; // restore
       window.removeEventListener('scroll', onScroll);
     } else {
-      window.addEventListener('scroll', onScroll, { passive: true });
-      update();
+      // re-enable scroll listener when viewport is back to desktop size
+      window.addEventListener('scroll', onScroll, { passive: true }); // attach passive listener for smooth scrolling
+      update(); // immediately sync hero background after resize
     }
   });
 });

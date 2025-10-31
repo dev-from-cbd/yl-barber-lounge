@@ -2,25 +2,25 @@ document.addEventListener('DOMContentLoaded', function () {
   const slider = document.querySelector('.hero-slider');
   if (!slider) return; // no slider present
 
-  const slidesEl = slider.querySelector('.slides');
-  const slides = slidesEl ? Array.from(slidesEl.children) : [];
-  const dotsContainer = slider.querySelector('.slider-dots');
-  if (!slidesEl || slides.length === 0) return;
+  const slidesEl = slider.querySelector('.slides'); // find the slides container element
+  const slides = slidesEl ? Array.from(slidesEl.children) : []; // array of slide elements (or empty)
+  const dotsContainer = slider.querySelector('.slider-dots'); // container for pagination dots
+  if (!slidesEl || slides.length === 0) return; // stop if no slides found
 
-  let current = 0;
-  const total = slides.length;
-  const interval = 4000;
-  let timer = null;
+  let current = 0; // index of the current slide
+  const total = slides.length; // total number of slides
+  const interval = 4000; // autoplay delay in milliseconds
+  let timer = null; // reference to autoplay timer (will store ID)
 
   // build dots
   dotsContainer.innerHTML = '';
   for (let i = 0; i < total; i++) {
-    const btn = document.createElement('button');
-    btn.type = 'button';
-    btn.setAttribute('aria-label', 'Go to slide ' + (i + 1));
-    btn.dataset.index = i;
-    btn.addEventListener('click', () => { goTo(i); resetTimer(); });
-    dotsContainer.appendChild(btn);
+    const btn = document.createElement('button'); // create a dot button
+    btn.type = 'button'; // make it a non-submit button
+    btn.setAttribute('aria-label', 'Go to slide ' + (i + 1)); // accessible label with slide number
+    btn.dataset.index = i; // store slide index for reference
+    btn.addEventListener('click', () => { goTo(i); resetTimer(); }); // go to slide and restart autoplay on click
+    dotsContainer.appendChild(btn); // append the dot to the dots container
   }
 
   function updateDots() {

@@ -38,6 +38,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
     cardsPerView = getCardsPerView();
     const cardWidth = track.offsetWidth / cardsPerView;
+    
+    // Ограничиваем currentIndex, чтобы не показывать пустоту
+    const maxIndex = Math.max(0, cards.length - cardsPerView);
+    if (currentIndex > maxIndex) {
+      currentIndex = maxIndex;
+    }
+    
     const offset = -currentIndex * (cardWidth + 24); // 24px is gap
     
     track.style.transform = `translateX(${offset}px)`;
@@ -67,11 +74,18 @@ document.addEventListener('DOMContentLoaded', function() {
   function nextSlide() {
     if (isTransitioning) return;
     cardsPerView = getCardsPerView();
-    currentIndex += cardsPerView;
+    const maxIndex = Math.max(0, cards.length - cardsPerView);
     
-    if (currentIndex >= cards.length) {
+    if (currentIndex < maxIndex) {
+      currentIndex += cardsPerView;
+      if (currentIndex > maxIndex) {
+        currentIndex = maxIndex;
+      }
+    } else {
+      // Если дошли до конца, возвращаемся в начало
       currentIndex = 0;
     }
+    
     updateSlider();
     resetAutoplay();
   }
@@ -79,11 +93,18 @@ document.addEventListener('DOMContentLoaded', function() {
   function prevSlide() {
     if (isTransitioning) return;
     cardsPerView = getCardsPerView();
-    currentIndex -= cardsPerView;
     
-    if (currentIndex < 0) {
-      currentIndex = Math.floor((cards.length - 1) / cardsPerView) * cardsPerView;
+    if (currentIndex > 0) {
+      currentIndex -= cardsPerView;
+      if (currentIndex < 0) {
+        currentIndex = 0;
+      }
+    } else {
+      // Если в начале, переходим к последним карточкам
+      const maxIndex = Math.max(0, cards.length - cardsPerView);
+      currentIndex = maxIndex;
     }
+    
     updateSlider();
     resetAutoplay();
   }
